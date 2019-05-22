@@ -44,7 +44,9 @@ filetype off
 syntax on
 filetype plugin indent on                    " load file type plugins + indentation
 
+" Relative line numbers with actual line number at highlighted line
 set nu
+set rnu
 
 "Spaces instead of tabs
 set tabstop=2
@@ -89,11 +91,14 @@ let mapleader=','
 
 set pastetoggle=<F2>                         " paste with F2
 
+" Turn relative line numbers on/off
+noremap <silent> <leader>r :set rnu!<cr>
+
 " forgetting to leave insertmode
 imap jj <Esc>
 imap kkk <Esc>
 
-" It's 2012.
+" Do not step over wrapped lines with vertical movement
 noremap j gj
 noremap k gk
 noremap gj j
@@ -110,8 +115,8 @@ map <S-h> gT
 map <S-l> gt
 
 " Y and D behaves
-nnoremap D d$
-nnoremap Y y$
+"nnoremap D d$
+"nnoremap Y y$
 
 " sudo write
 cmap w!! w !sudo tee % >/dev/null
