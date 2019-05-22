@@ -1,0 +1,63 @@
+"               Settings:
+"----------------------------------
+set nu
+set rnu
+
+set showcmd
+
+"               Keybindings:
+"----------------------------------
+let mapleader=','
+
+" Turn relative line numbers on/off
+noremap <silent> <leader>r :set rnu!<cr>
+
+" forgetting to leave insertmode
+imap jj <Esc>
+imap kkk <Esc>
+
+" Jump one line from insert mode.
+inoremap <leader>j <esc>jA
+inoremap <leader>k <esc>kA
+
+" Delete word in normal mode using ctrl-w
+nnoremap <C-w> diw
+
+" Do not step over wrapped lines with vertical movement
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+
+" window movement
+no <C-L> <C-W>l
+no <C-H> <C-W>h
+no <C-J> <C-W>j
+no <C-K> <C-W>k
+
+" Exit document.
+nnoremap <leader><leader>q :q<cr>
+
+" Write to disk
+nnoremap <leader><leader>w :w<cr>
+
+"Esc is too far away
+inoremap <leader>q <esc>
+nnoremap <leader>q <esc>
+vnoremap <leader>q <esc>
+cnoremap <leader>q <esc>
+
+"                Search:
+"----------------------------------
+
+set incsearch " incremental search
+set ignorecase " search ignoring case
+set smartcase " Ignore case when searching lowercase
+set hlsearch " highlight the search
+set showmatch " show matching bracket
+
+" Use // in visual mode to search for highlighted text
+vnoremap // y/\V<C-R>"<CR>
+
+" clear search results
+noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>

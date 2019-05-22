@@ -11,6 +11,11 @@ then
   rm .vimrc
 fi
 
+if [ -L .ideavimrc ];
+then
+  rm .ideavimrc
+fi
+
 if [ -e .vim ];
 then
   mkdir .old > /dev/null
@@ -23,6 +28,13 @@ then
   mv .vimrc .old
 fi
 
+if [ -e .ideavimrc ];
+then
+  mkdir .old > /dev/null
+  mv .ideavimrc .old
+fi
+
 ln -s ${configdir}/vim .vim
 ln -s ${configdir}/vimrc .vimrc
+ln -s ${configdir}/ideavimrc .ideavimrc
 
