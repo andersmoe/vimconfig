@@ -5,16 +5,14 @@ set rnu
 
 set showcmd
 
+set ideajoin
+
 "               Keybindings:
 "----------------------------------
 let mapleader=','
 
 " Turn relative line numbers on/off
 noremap <silent> <leader>r :set rnu!<cr>
-
-" forgetting to leave insertmode
-imap jj <Esc>
-imap kkk <Esc>
 
 " Jump one line from insert mode.
 inoremap <leader>j <esc>jA
